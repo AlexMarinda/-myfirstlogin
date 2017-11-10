@@ -7,8 +7,8 @@
                   
         margin-top: 100px;  
         margin-bottom: 100px;  
-        margin-right: 150px;  
-        margin-left: 80px;  
+        margin-right: 100px;  
+        margin-left: 70px;  
         background-color: azure ;  
         color: palevioletred;  
         font-family: verdana;  
