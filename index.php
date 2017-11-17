@@ -1,4 +1,6 @@
-    <!doctype html>  
+
+
+<!doctype html>  
     <html>  
     <head>  
     <title>Login</title>  
@@ -31,12 +33,12 @@
     	<table>
     		
           
-       <p><a href="register.php">Register</a> | <a href="login.php">Login</a></p> 
+       <p><a href="register.php">Register</a> | <a href="index.php">Login</a></p> 
        <br><br> 
     <h3><u>Login Form</u></h3>  
     
     		<br>
-    <form action="" method="POST"> 
+    <form action="index.php" method="POST"> 
     	
     <tr>
    <td> Username: <input type="text" name="user"></dt> </tr> 
@@ -54,10 +56,10 @@
 		$hashe=hash('sha512',$pass); 
            
         $query="SELECT * FROM users WHERE username='$user' AND password='$hashe'"; 
-        $result=mysql_query($query);  
+        $result=pg_query($query);  
 if($result)
 {
-    if(mysql_num_rows($result) >0 )
+    if(pg_num_rows($result) >0 )
 	{
 		echo "succefull";
 }

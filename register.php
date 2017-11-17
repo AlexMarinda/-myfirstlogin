@@ -1,3 +1,4 @@
+
 <!doctype html>  
 <html>  
 <head>  
@@ -30,11 +31,11 @@
 	<center>  
      <table>
     
-   <p><a href="register.php">Register</a> | <a href="login.php">Login</a></p>  
+   <p><a href="register.php">Register</a> | <a href="index.php">Login</a></p>  
    <br><br>
      <CENTER><h2><u>REGISTRATION Form</u></h2>  </CENTER>
     
-<form action="" method="POST">  
+<form action="register.php" method="POST">  
 	
      
    
@@ -77,13 +78,13 @@ if(!$mv)
  exit;
  }
 } */
-    $query=mysql_query("SELECT * FROM users WHERE username='".$user."'");  
-    $number_rows=mysql_num_rows($query);  
+    $query=pg_query("SELECT * FROM users WHERE username='".$user."'");  
+    $number_rows=pg_num_rows($query);  
     if($number_rows==0)  
     {  
     $sql=("Insert into users VALUES('$fn','$sn','$user','$hashe');"); 
   
-    $result=mysql_query($sql);  
+    $result=pg_query($sql);  
         if($result){  
     echo " Successfully ";  
     } else {  
